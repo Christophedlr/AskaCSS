@@ -1,0 +1,8 @@
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# IntelliJ IDEA
+.idea/
+*.iml
