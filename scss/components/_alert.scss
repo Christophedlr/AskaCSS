@@ -1,0 +1,29 @@
+/** Alert component */
+.alert {
+  display: flex;
+  width: 100%;
+  background-color: $grey;
+  color: black;
+  align-items: center;
+  padding: 1rem 0.5rem 1rem 2rem;
+}
+
+.alert-success {
+  background-color: $green;
+  color: darken($green, 60%);
+}
+
+.alert-error {
+  background-color: $red;
+  color: darken($red, 60%);
+}
+
+.alert-warning {
+  background-color: $yellow;
+  color: darken($yellow, 60%);
+}
+
+.alert-info {
+  background-color: $azure;
+  color: darken($azure, 60%);
+}
