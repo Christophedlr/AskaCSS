@@ -1,0 +1,134 @@
+/* Form component*/
+form > input {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid darken($grey, 30%);
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+form > input:focus {
+  outline: none;
+  border-color: black;
+}
+
+form > input.form-success {
+  border-color: darken($green, 20%);
+}
+
+form > input.form-error {
+  border-color: darken($red, 20%);
+}
+
+form > input.form-warning {
+  border-color: darken($yellow, 20%);
+}
+
+form > input.form-info {
+  border-color: darken($azure, 20%);
+}
+
+form > input:focus.form-success {
+  border-color: darken($green, 50%);
+}
+
+form > input:focus.form-error {
+  border-color: darken($red, 50%);
+}
+
+form > input:focus.form-warning {
+  border-color: darken($yellow, 50%);
+}
+
+form > input:focus.form-info {
+  border-color: darken($azure, 50%);
+}
+
+form > input[required] {
+  background-image: url("data:image/svg+xml,<svg width=\"32px\" height=\"32px\" viewBox=\"0 0 64 64\" xmlns=\"http://www.w3.org/2000/svg\"><text fill=\"red\" transform=\"matrix(1 0 0 1 -0.4355 63.374)\" style=\"font-size:82px;\">*</text></svg>");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: right 4px top 13px;
+}
+
+form > input[type="submit"], form > input[type="reset"], form > input[type="button"] {
+  display: inherit;
+  margin: 0%;
+  width: inherit;
+  height: inherit;
+}
+
+form {
+  > input[type="checkbox"], > div > input[type="checkbox"] {
+    display: none;
+    margin: 0 5px 0 0;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+
+    +label {
+      display: inline-block;
+      background-color: #c0ceda;
+      border-radius: 1.5rem;
+      width: 3rem;
+      height: 1.5rem;
+      padding: 2px;
+      margin-right: 40px;
+
+      span {
+        position: relative;
+        top: -1.2rem;
+        left: 3.2rem;
+      }
+
+      &:before {
+        display: block;
+        content: "";
+        height: calc(1.5rem - 4px);
+        width: calc(1.5rem - 4px);
+        border-radius: 50%;
+        background-color: #fff;
+        transition: all 0.5s;
+      }
+    }
+
+    &:checked {
+      +label {
+        background-color: $blue;
+
+        &:before {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+form > button, form > input[type="submit"], form > input[type="reset"], form > input[type="button"] {
+  padding: 0.4% 0.9% 0.4% 0.7%;
+  border: 1px solid $blue;
+  background-color: $blue;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+form > button:hover, form > input[type="submit"]:hover, form > input[type="reset"]:hover, form > input[type="button"]:hover {
+  background-color: darken($blue, 10%);
+  border-color: darken($blue, 10%);
+}
+
+form > button.btn-default {
+  background-color: $grey;
+  border-color: $grey;
+  color: black;
+}
+
+form > button:hover.btn-default, form > input:hover.btn-default {
+  background-color: darken($grey, 10%);
+  border-color: darken($grey, 10%);
+  color: black;
+}
