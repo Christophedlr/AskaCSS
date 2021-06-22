@@ -105,6 +105,26 @@ form {
       }
     }
   }
+
+  > input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    border: 3px solid $grey;
+    border-radius: 50%;
+
+    +label {
+      position: relative;
+      top: -1.5rem;
+      left: 1.5rem;
+      vertical-align: middle;
+    }
+
+    &:checked {
+      background-color: $blue;
+    }
+  }
 }
 
 form > button, form > input[type="submit"], form > input[type="reset"], form > input[type="button"] {
