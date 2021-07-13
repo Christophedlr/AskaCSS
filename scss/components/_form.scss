@@ -10,11 +10,12 @@ form.askacss input {
   padding-left: 0.5rem;
   margin-bottom: 1%;
   font-size: 1rem;
-}
 
-form.askacss input:focus {
-  outline: none;
-  border-color: black;
+  &:focus {
+    box-shadow: 0 0 0 0.2rem transparentize($blue, 0.5);
+    border: 1px solid transparentize($blue, 0.5);
+    outline: 0;
+  }
 }
 
 form.askacss input.form-success {
@@ -126,15 +127,14 @@ form.askacss {
     appearance: none;
     width: 16px;
     height: 16px;
-    vertical-align: middle;
     border: 3px solid $grey;
     border-radius: 50%;
+    margin: 0 0 -1rem;
 
     +label {
       position: relative;
-      top: -1.5rem;
+      top: -0.1rem;
       left: 1.5rem;
-      vertical-align: middle;
     }
 
     &:checked {
@@ -158,8 +158,7 @@ form.askacss {
   }
 
   fieldset {
-    padding: 0.5% 1%;
-    padding-bottom: 1%;
+    padding: 0.5% 1% 1%;
     border: 1px solid $grey;
 
     legend {
