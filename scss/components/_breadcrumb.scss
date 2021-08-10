@@ -1,0 +1,32 @@
+/** Breadcrumb component */
+nav.breadcrumb, div.breadcrumb {
+  background-color: lighten($grey, 10%);
+  padding: 1rem;
+  margin-bottom: 1%;
+  border: 1px solid lighten($grey, 5%);
+  border-radius: 4px;
+
+  ul, ol {
+    list-style: none;
+    font-size: 1.2rem;
+
+    li {
+      display: inline;
+      &:first-child:before {
+        content: "";
+        margin-left: 0;
+      }
+
+      &:before {
+        content: "/";
+        margin-left: 2px;
+        margin-right: 6px;
+      }
+
+      &:last-child {
+        color: darken($grey, 60%);
+        font-weight: bold;
+      }
+    }
+  }
+}
