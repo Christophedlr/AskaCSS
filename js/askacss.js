@@ -85,3 +85,36 @@ modals = document.querySelectorAll("div.modal");
 for (let i = 0; i < modals.length; i++) {
     new Modal(modals[i]);
 }
+
+/** Progressbar class*/
+class Progressbar {
+    constructor(pbarNode) {
+        const value = pbarNode.attributes.getNamedItem("aria-value").value;
+        let result = value.toString();
+
+        if (!value.endsWith("%")) {
+            if (pbarNode.attributes.getNamedItem("aria-max")) {
+                let max = pbarNode.attributes.getNamedItem("aria-max").value;
+                result = ((value/max)*100).toFixed(0).toString()+'%';
+            }
+        }
+
+        if (pbarNode.childNodes.length < 1) {
+            //pbarNode.innerHTML = '<div class="indicator">'+result+'</div>';
+            pbarNode.appendChild(document.createElement('div'));
+            pbarNode.childNodes[0].classList.add('indicator');
+        } else {
+            console.log(pbarNode.childNodes);
+            pbarNode.appendChild(document.createElement('div'));
+            pbarNode.childNodes[pbarNode.childNodes.length-1].classList.add('indicator');
+        }
+
+        pbarNode.childNodes[pbarNode.childNodes.length-1].style.width = result;
+        pbarNode.childNodes[pbarNode.childNodes.length-1].innerText = result;
+    }
+}
+
+progressbars = document.querySelectorAll(".progressbar");
+for (let i = 0; i < progressbars.length; i++) {
+    new Progressbar(progressbars[i]);
+}
