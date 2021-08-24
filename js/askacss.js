@@ -118,3 +118,8 @@ progressbars = document.querySelectorAll(".progressbar");
 for (let i = 0; i < progressbars.length; i++) {
     new Progressbar(progressbars[i]);
 }
+
+progressbars = document.querySelectorAll(".progressbar-small");
+for (let i = 0; i < progressbars.length; i++) {
+    new Progressbar(progressbars[i]);
+}

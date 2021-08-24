@@ -13,4 +13,15 @@
     text-align: center;
     padding-top: 9px;
   }
+
+  &-small {
+    @extend .progressbar;
+    height: 16px;
+
+    .indicator {
+      @extend .indicator;
+      padding-top: 1px;
+      font-size: 0.8rem;
+    }
+  }
 }
