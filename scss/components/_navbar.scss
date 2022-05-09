@@ -5,6 +5,7 @@
   background-color: $grey;
   align-items: center;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
+  font-family: "robotoregular", sans-serif;
 }
 
 .navbar-dark {
@@ -15,8 +16,8 @@
 .navbar > .title {
   display: flex;
   font-weight: bold;
-  font-size: 1.5rem;
-  margin-right: 10%;
+  font-size: 1.2rem;
+  margin-right: 5%;
 }
 
 .navbar > ul, .navbar > ol {
