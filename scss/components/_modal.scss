@@ -4,22 +4,22 @@ div.modal {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #BEBEBE;
   width: 100%;
   height: 100%;
   overflow: auto;
   padding-top: 5%;
+  font-family: 'robotoregular';
 
   .content {
     width: 50%;
     margin: auto;
-    border: 1px solid $grey;
-    border-radius: 4px;
     background-color: white;
+    box-shadow: 5px 3px 15px 4px #7a7a7a, 0px 1px 10px 4px #7a7a7a;
 
     .header {
-      border-bottom: 1px solid $grey;
-      padding: 10px;
+      padding: 10px 10px 9px;
+      font-size: 1.25rem;
 
       .close {
         font-size: 1.4rem;
@@ -32,13 +32,13 @@ div.modal {
     }
 
     .body {
-      padding: 10px;
+      padding: 10px 10px 24px;
       margin-left: 17px;
       margin-right: 17px;
+      font-size: 1rem;
     }
 
     .footer {
-      border-top: 1px solid $grey;
       padding: 10px 10px 10px 27px;
     }
   }

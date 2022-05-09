@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'robotoregular';
+  src: url("../fonts/roboto-regular-webfont.woff") format("woff");
+  src: url("../fonts/roboto-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Reset elements*/
 *, ::before, ::after {
   box-sizing: border-box;
