@@ -1,0 +1,83 @@
+a.btn {
+  text-decoration: none;
+}
+
+button, input[type="button"], input[type="submit"], input[type="reset"], a.btn {
+  font-family: "robotoregular", sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: $grey;
+  color: black;
+  border: 1px solid $grey;
+  border-radius: 4px;
+  padding: 0.4% 0.6%;
+
+  &:hover {
+    background-color: lighten($grey, 10%);
+  }
+
+  &:focus {
+    background-color: transparent;
+    color: darken($grey, 35%);
+    transition-duration: .8s;
+  }
+
+  $list: success, error, warning, info, primary;
+  @each $l in $list {
+    &.btn-#{$l} {
+      $color: $grey;
+
+      @if $l == success {
+        $color: $green;
+      } @else if $l == error {
+        $color: $red;
+      } @else if $l == warning {
+        $color: $yellow;
+      } @else if $l == info {
+        $color: $azure;
+      } @else if $l == primary {
+        $color: $blue;
+      }
+
+      background-color: $color;
+      color: white;
+      border: 1px solid $color;
+
+      &:hover {
+        background-color: lighten($color, 10%);
+      }
+
+      &:focus {
+        @extend :focus;
+        color: $color;
+      }
+
+      &.btn-text {
+        color: $color;
+
+        &:hover {
+          background-color: inherit;
+        }
+
+        &:focus {
+          background-color: lighten($color, 10%);
+          border: 1px solid lighten($color, 10%);
+          color: white;
+          transition-duration: 0.8s;
+        }
+      }
+    }
+  }
+
+  &.btn-text {
+    background-color: transparent;
+    border: none;
+    color: darken($grey, 35%);
+
+    &:focus {
+      background-color: lighten($grey, 10%);
+      border: 1px solid $grey;
+      transition-duration: .5s;
+    }
+  }
+}
