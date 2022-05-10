@@ -1,13 +1,140 @@
 /* Form component*/
-form.askacss {
+form {
+  input {
+    &[type] {
+      &:not([type="submit"]):not([type="reset"]):not([type="button"]) {
+        height: 34px;
+        border: 1px solid $grey;
+        border-radius: 4px;
+        padding-left: 5px;
+        padding-right: 11px;
+
+        &:focus, &:focus-visible {
+          border: 2px solid $grey;
+          outline: none;
+        }
+      }
+
+      &[type="text"],
+      &[type="password"],
+      &[type="date"],
+      &[type="datetime-local"],
+      &[type="email"],
+      &[type="month"],
+      &[type="number"],
+      &[type="search"],
+      &[type="tel"],
+      &[type="time"],
+      &[type="url"],
+      &[type="week"] {
+        $list: success, error, warning, info, primary;
+        @each $l in $list {
+          &.#{$l} {
+            $color: $grey;
+
+            @if $l == success {
+              $color: $green;
+            } @else if $l == error {
+              $color: $red;
+            } @else if $l == warning {
+              $color: $yellow;
+            } @else if $l == info {
+              $color: $azure;
+            } @else if $l == primary {
+              $color: $blue;
+            }
+
+            border: 1px solid $color !important;
+
+            &:focus, &:focus-visible {
+              border: 2px solid $color !important;
+            }
+
+            &::placeholder {
+              color: darken($color, 15%) !important;
+            }
+          }
+        }
+      }
+
+      &[type="checkbox"] {
+        appearance: none;
+        height: 24px !important;
+        width: 24px !important;
+        border: 2px solid $grey;
+        position: relative;
+        top: 7px;
+        margin-right: 4px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        &:checked {
+          background-color: $grey;
+          top: 3px;
+
+          &:disabled {
+            background-color: lighten($grey, 10%);
+            border: 2px solid lighten($grey, 10%);
+            cursor: initial;
+          }
+        }
+
+        &:checked:after {
+          content: "\2715";
+          font-size: 1.5rem;
+          color: white;
+          position: relative;
+          top: -2px;
+          left: -5px;
+          vertical-align: middle;
+        }
+
+        $list: success, error, warning, info, primary;
+        @each $l in $list {
+          &.#{$l} {
+            $color: $grey;
+
+            @if $l == success {
+              $color: $green;
+            } @else if $l == error {
+              $color: $red;
+            } @else if $l == warning {
+              $color: $yellow;
+            } @else if $l == info {
+              $color: $azure;
+            } @else if $l == primary {
+              $color: $blue;
+            }
+
+            border: 2px solid $color;
+
+            &:checked {
+              background-color: $color;
+              border: 2px solid $color;
+
+              &:disabled {
+                background-color: lighten($color, 10%);
+                border: 2px solid lighten($color, 10%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*form{
    input {
-    display: block;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
-    height: 40px;
+    height: 35px;
     border: 1px solid $grey;
-    border-radius: 0.25rem;
+    border-radius: 4px;
     padding-left: 0.5rem;
     margin-bottom: 1%;
     font-size: 1rem;
@@ -216,4 +343,4 @@ form.askacss button:hover.btn-default, form.askacss input:hover.btn-default {
   background-color: darken($grey, 10%);
   border-color: darken($grey, 10%);
   color: black;
-}
+}*/

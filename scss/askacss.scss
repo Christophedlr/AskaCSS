@@ -2,6 +2,14 @@
 @import 'variables';
 @import 'buttons';
 
+.required {
+  color: red;
+  position: relative;
+  left: -12px;
+  bottom: -3px;
+}
+
+
 /* Import components */
 @import 'components/navbar';
 @import 'components/alert';

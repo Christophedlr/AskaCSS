@@ -123,3 +123,12 @@ progressbars = document.querySelectorAll(".progressbar-small");
 for (let i = 0; i < progressbars.length; i++) {
     new Progressbar(progressbars[i]);
 }
+
+required = document.querySelectorAll("[required]");
+for (let i = 0; i < required.length; i++) {
+    span = document.createElement('span');
+    span.className += "required";
+    span.appendChild(document.createTextNode("*"));
+
+    required[i].insertAdjacentElement("afterend", span);
+}
