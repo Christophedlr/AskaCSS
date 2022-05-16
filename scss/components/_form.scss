@@ -122,10 +122,167 @@ form {
           }
         }
       }
+
+      &[type="radio"] {
+        appearance: none;
+        height: 20px !important;
+        width: 20px !important;
+        border: 2px solid $grey !important;
+        border-radius: 100% !important;
+        position: relative;
+        top: 5px;
+        margin-right: 4px;
+        cursor: pointer;
+
+        &:checked {
+          background-color: $grey !important;
+
+          &:disabled {
+            background-color: lighten($grey, 10%) !important;
+            border: 2px solid lighten($grey, 10%) !important;
+          }
+        }
+
+        &:disabled {
+          background-color: initial;
+          border: 2px solid lighten($grey, 10%);
+          cursor: initial;
+        }
+
+        $list: success, error, warning, info, primary;
+        @each $l in $list {
+          &.#{$l} {
+            $color: $grey;
+
+            @if $l == success {
+              $color: $green;
+            } @else if $l == error {
+              $color: $red;
+            } @else if $l == warning {
+              $color: $yellow;
+            } @else if $l == info {
+              $color: $azure;
+            } @else if $l == primary {
+              $color: $blue;
+            }
+
+            border: 2px solid $color !important;
+
+            &:checked {
+              background-color: $color !important;
+
+              &:disabled {
+                background-color: lighten($color, 20%) !important;
+                border: 2px solid lighten($color, 20%) !important;
+              }
+            }
+
+            &:disabled {
+              background-color: initial !important;
+              border: 2px solid lighten($color, 20%) !important;
+            }
+          }
+        }
+      }
+
+      &[type="color"] {
+        vertical-align: bottom;
+      }
+
+      &[type="file"] {
+        height: initial !important;
+        border: none !important;
+        border-radius: initial !important;
+        padding-right: 0 !important;
+      }
+
+      &[type="range"] {
+        appearance: none;
+        vertical-align: bottom;
+        border: none !important;
+        border-radius: initial !important;
+        padding: 0;
+
+        &::-webkit-slider-thumb {
+          appearance: none;
+          border: none;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          background-color: $grey;
+          margin-top: -7px;
+        }
+
+        &::-webkit-slider-runnable-track {
+          width: 300px;
+          height: 6px;
+          background-color: $grey;
+          border: none;
+          border-radius: 3px;
+        }
+
+        &:focus::-webkit-slider-thumb {
+          background-color: lighten($grey, 10%);
+        }
+
+        $list: success, error, warning, info, primary;
+        @each $l in $list {
+          &.#{$l} {
+            $color: $grey;
+
+            @if $l == success {
+              $color: $green;
+            } @else if $l == error {
+              $color: $red;
+            } @else if $l == warning {
+              $color: $yellow;
+            } @else if $l == info {
+              $color: $azure;
+            } @else if $l == primary {
+              $color: $blue;
+            }
+
+            &::-webkit-slider-thumb {
+              background-color: $color;
+            }
+
+            &::-ms-thumb {
+              background-color: $color;
+            }
+
+            &::-moz-range-thumb {
+              background-color: $color;
+            }
+
+            &::-webkit-slider-runnable-track {
+              background-color: $color;
+            }
+
+            &::-ms-track {
+              background-color: $color;
+            }
+
+            &::-moz-range-track {
+              background-color: $color;
+            }
+
+            &:focus::-webkit-slider-thumb {
+              background-color: lighten($color, 10%);
+            }
+
+            &:focus::-moz-range-thumb {
+              background-color: lighten($color, 10%);
+            }
+
+            &:focus::-ms-thumb {
+              background-color: lighten($color, 10%);
+            }
+          }
+        }
+      }
     }
   }
 }
-
 
 /*form{
    input {
