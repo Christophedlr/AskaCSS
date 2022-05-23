@@ -2,7 +2,6 @@
 .panel {
   border: 1px solid $grey;
   font-family: "robotoregular", sans-serif;
-  box-shadow: 0px 4px 14px 2px #8a8a8a;
 
   @for $i from 2 through 5 {
     > h#{$i} {
@@ -26,33 +25,23 @@
     padding: 0.5rem;
     font-size: 0.8rem;
   }
-}
 
-$list: success, error, warning, info, primary;
-@each $l in $list {
-  .panel-#{$l} {
-    $color: $grey;
+  $list: success, error, warning, info, primary;
+  @each $l in $list {
+    &.#{$l} {
+      $color: colorclass($l);
 
-    @if $l == success {
-      $color: $green;
-    } @else if $l == error {
-      $color: $red;
-    } @else if $l == warning {
-      $color: $yellow;
-    } @else if $l == info {
-      $color: $azure;
-    } @else if $l == primary {
-      $color: $blue;
-    }
+      border: 1px solid $color;
 
-    @for $i from 2 through 5 {
-      > h#{$i} {
-        @if $color == $blue {
-          background-color: darken($color, 10%);
-          color: white;
-        } @else {
-          background-color: lighten($color, 10%);
-          color: darken($color, 50%);
+      @for $i from 2 through 5 {
+        > h#{$i} {
+          @if $color == $blue {
+            background-color: darken($color, 10%);
+            color: white;
+          } @else {
+            background-color: lighten($color, 10%);
+            color: darken($color, 50%);
+          }
         }
       }
     }

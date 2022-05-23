@@ -6,46 +6,42 @@
   align-items: center;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
   font-family: "robotoregular", sans-serif;
-}
 
-.navbar-dark {
-  background-color: black;
-  color: white;
-}
+  &.navbar-dark {
+    background-color: black;
+    color: white;
+  }
 
-.navbar > .title {
-  display: flex;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-right: 5%;
-}
+  &>.title {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 5%;
+  }
 
-.navbar > ul, .navbar > ol {
-  display: flex;
-  justify-content: space-around;
-  width: 90%;
-}
+  &>ul, &>ol {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
 
-.navbar > ul > li, .navbar > ol > li {
-  list-style: none;
-}
+    &>li {
+      list-style: none;
+    }
 
-.navbar li a, .navbar li a {
-  text-decoration: none;
-}
+    & li a {
+      text-decoration: none;
 
-.navbar li a:link, .navbar li a:visited {
-  color: inherit;
-}
+      &:link, &:visited {
+        color: inherit;
+      }
+    }
 
-.navbar li a:hover, .navbar li a:hover, .navbar li.active a:link, .navbar li.active a:visited {
-  color: lighten($grey, 20%);
-}
+    & li a:hover, & li.active a:link, & li.active a:visited {
+      color: darken($grey, 20%);
+    }
 
-.navbar-dark li a:hover, .navbar-dark li a:hover, .navbar-dark li.active a:link, .navbar-dark li.active a:visited {
-  color: darken($grey, 20%);
-}
-
-.navbar li.disabled a {
-  pointer-events: none;
+    & li.disabled a {
+      pointer-events: none;
+    }
+  }
 }

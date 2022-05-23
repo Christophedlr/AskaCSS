@@ -1,19 +1,28 @@
 /* Form component*/
 form {
   input {
+    height: 34px;
+    border: 1px solid $grey;
+    border-radius: 4px;
+    padding-left: 5px;
+    padding-right: 11px;
+    width: 100%;
+
+    &:focus, &:focus-visible {
+      border: 2px solid $grey;
+      outline: none;
+    }
+
     &[type] {
-      &:not([type="submit"]):not([type="reset"]):not([type="button"]) {
-        height: 34px;
+      &[type="submit"], [type="reset"], [type="button"] {
+        font-family: "robotoregular", sans-serif;
+        font-size: 0.8rem;
+        cursor: pointer;
+        color: black;
         border: 1px solid $grey;
         border-radius: 4px;
-        padding-left: 5px;
-        padding-right: 11px;
-        width: 100%;
-
-        &:focus, &:focus-visible {
-          border: 2px solid $grey;
-          outline: none;
-        }
+        padding: 0.4% 0.6%;
+        width: initial;
       }
 
       &[type="text"],
@@ -31,19 +40,7 @@ form {
         $list: success, error, warning, info, primary;
         @each $l in $list {
           &.#{$l} {
-            $color: $grey;
-
-            @if $l == success {
-              $color: $green;
-            } @else if $l == error {
-              $color: $red;
-            } @else if $l == warning {
-              $color: $yellow;
-            } @else if $l == info {
-              $color: $azure;
-            } @else if $l == primary {
-              $color: $blue;
-            }
+            $color: colorclass($l);
 
             border: 1px solid $color !important;
 
@@ -95,19 +92,7 @@ form {
         $list: success, error, warning, info, primary;
         @each $l in $list {
           &.#{$l} {
-            $color: $grey;
-
-            @if $l == success {
-              $color: $green;
-            } @else if $l == error {
-              $color: $red;
-            } @else if $l == warning {
-              $color: $yellow;
-            } @else if $l == info {
-              $color: $azure;
-            } @else if $l == primary {
-              $color: $blue;
-            }
+            $color: colorclass($l);
 
             border: 2px solid $color;
 
@@ -153,19 +138,7 @@ form {
         $list: success, error, warning, info, primary;
         @each $l in $list {
           &.#{$l} {
-            $color: $grey;
-
-            @if $l == success {
-              $color: $green;
-            } @else if $l == error {
-              $color: $red;
-            } @else if $l == warning {
-              $color: $yellow;
-            } @else if $l == info {
-              $color: $azure;
-            } @else if $l == primary {
-              $color: $blue;
-            }
+            $color: colorclass($l);
 
             border: 2px solid $color !important;
 
@@ -229,19 +202,7 @@ form {
         $list: success, error, warning, info, primary;
         @each $l in $list {
           &.#{$l} {
-            $color: $grey;
-
-            @if $l == success {
-              $color: $green;
-            } @else if $l == error {
-              $color: $red;
-            } @else if $l == warning {
-              $color: $yellow;
-            } @else if $l == info {
-              $color: $azure;
-            } @else if $l == primary {
-              $color: $blue;
-            }
+            $color: colorclass($l);
 
             &::-webkit-slider-thumb {
               background-color: $color;
@@ -299,19 +260,7 @@ form {
       $list: success, error, warning, info, primary;
       @each $l in $list {
         &.#{$l} {
-          $color: $grey;
-
-          @if $l == success {
-            $color: $green;
-          } @else if $l == error {
-            $color: $red;
-          } @else if $l == warning {
-            $color: $yellow;
-          } @else if $l == info {
-            $color: $azure;
-          } @else if $l == primary {
-            $color: $blue;
-          }
+          $color: colorclass($l);
 
           border: 1px solid $color;
 
@@ -345,19 +294,7 @@ form {
     $list: success, error, warning, info, primary;
     @each $l in $list {
       &.#{$l} {
-        $color: $grey;
-
-        @if $l == success {
-          $color: $green;
-        } @else if $l == error {
-          $color: $red;
-        } @else if $l == warning {
-          $color: $yellow;
-        } @else if $l == info {
-          $color: $azure;
-        } @else if $l == primary {
-          $color: $blue;
-        }
+        $color: colorclass($l);
 
         border: 1px solid $color;
 
@@ -388,19 +325,7 @@ form {
     $list: success, error, warning, info, primary;
     @each $l in $list {
       &.#{$l} {
-        $color: $grey;
-
-        @if $l == success {
-          $color: $green;
-        } @else if $l == error {
-          $color: $red;
-        } @else if $l == warning {
-          $color: $yellow;
-        } @else if $l == info {
-          $color: $azure;
-        } @else if $l == primary {
-          $color: $blue;
-        }
+        $color: colorclass($l);
 
         border: 1px solid $color;
 
@@ -420,19 +345,7 @@ form {
     $list: success, error, warning, info, primary;
     @each $l in $list {
       &.#{$l} {
-        $color: $grey;
-
-        @if $l == success {
-          $color: $green;
-        } @else if $l == error {
-          $color: $red;
-        } @else if $l == warning {
-          $color: $yellow;
-        } @else if $l == info {
-          $color: $azure;
-        } @else if $l == primary {
-          $color: $blue;
-        }
+        $color: colorclass($l);
 
         border-color: $color;
       }

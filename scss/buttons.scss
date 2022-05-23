@@ -24,20 +24,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a.btn {
 
   $list: success, error, warning, info, primary;
   @each $l in $list {
-    &.btn-#{$l} {
-      $color: $grey;
-
-      @if $l == success {
-        $color: $green;
-      } @else if $l == error {
-        $color: $red;
-      } @else if $l == warning {
-        $color: $yellow;
-      } @else if $l == info {
-        $color: $azure;
-      } @else if $l == primary {
-        $color: $blue;
-      }
+    &.#{$l} {
+      $color: colorclass($l);
 
       background-color: $color;
       color: white;

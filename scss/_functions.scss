@@ -1,0 +1,17 @@
+@function colorclass($class) {
+  $color: $grey;
+
+  @if $class == success {
+    $color: $green;
+  } @else if $class == error {
+    $color: $red;
+  } @else if $class == warning {
+    $color: $yellow;
+  } @else if $class == info {
+    $color: $azure;
+  } @else if $class == primary {
+    $color: $blue;
+  }
+
+  @return $color;
+}

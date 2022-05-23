@@ -7,27 +7,16 @@
   align-items: center;
   padding: 1rem 0.5rem 1rem 2rem;
   font-family: "robotoregular", sans-serif;
-}
 
-.alert-success {
-  background-color: $green;
-  color: darken($green, 60%);
-}
+  $list: success, error, warning, info, primary;
+  @each $l in $list {
+    &.#{$l} {
+      $color: colorclass($l);
 
-.alert-error {
-  background-color: $red;
-  color: darken($red, 60%);
-  --color: darken($red, 60%);
-}
-
-.alert-warning {
-  background-color: $yellow;
-  color: darken($yellow, 60%);
-}
-
-.alert-info {
-  background-color: $azure;
-  color: darken($azure, 60%);
+      background-color: $color;
+      color: darken($color, 60%);
+    }
+  }
 }
 
 .alert-close {
@@ -37,9 +26,9 @@
   background-color: inherit;
   color: inherit;
   border: none;
-}
 
-
-.alert-close:hover {
-  cursor: pointer;
+  &:hover {
+    cursor: pointer;
+    background-color: inherit;
+  }
 }
