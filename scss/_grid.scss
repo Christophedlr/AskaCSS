@@ -1,0 +1,17 @@
+/** Grid */
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: minmax(2rem, auto);
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      grid-column-end: span $i;
+    }
+
+    .col-s-#{$i} {
+      grid-column-start: $i;
+    }
+  }
+}
