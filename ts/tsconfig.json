@@ -103,6 +103,8 @@
   "files": [
     "functions.ts",
     "modal.ts",
+    "alert.ts",
+    "progressbar.ts",
     "main.ts"
   ]
 }
