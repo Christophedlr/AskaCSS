@@ -10,7 +10,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a.btn {
   color: black;
   border: 1px solid $grey;
   border-radius: 4px;
-  padding: 0.4% 0.6%;
+  padding: 0.31rem 0.46rem;
 
   &:hover {
     background-color: lighten($grey, 10%);
