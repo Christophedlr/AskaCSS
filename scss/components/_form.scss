@@ -18,11 +18,9 @@ form {
         font-family: "robotoregular", sans-serif;
         font-size: 0.8rem;
         cursor: pointer;
-        color: black;
-        border: 1px solid $grey;
         border-radius: 4px;
-        padding: 0.4% 0.6%;
         width: initial;
+        height: initial;
       }
 
       &[type="text"],
