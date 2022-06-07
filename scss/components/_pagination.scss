@@ -1,0 +1,52 @@
+/** Pagination Component */
+.pagination {
+    font-family: "robotoregular", sans-serif;
+    font-weight: normal;
+
+    ul {
+      list-style: none;
+      display: flex;
+
+        li {
+            a {
+              text-decoration: none;
+              color: $blue;
+              border: 1px solid $grey;
+              padding: 0.31rem 0.46rem;
+              border-radius: 0;
+              border-right: none;
+            }
+
+            a:visited {
+              color: $blue;
+            }
+
+            &:first-child a {
+              border-bottom-left-radius: 4px;
+              border-top-left-radius: 4px;
+              border-right: none;
+            }
+
+            &:last-child a {
+              border-bottom-right-radius: 4px;
+              border-top-right-radius: 4px;
+              border-right: 1px solid $grey;
+            }
+
+            a:hover {
+              background-color: lighten($grey, 20%);
+            }
+
+            &.active a {
+              background-color: $blue;
+              color: white;
+            }
+
+            &.disabled a {
+              color: $grey;
+              cursor: default;
+              pointer-events: none;
+            }
+        }
+    }
+}
