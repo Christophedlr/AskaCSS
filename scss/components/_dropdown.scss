@@ -1,0 +1,42 @@
+/** Dropdown component */
+.dropdown {
+    button::after {
+      content: '';
+      display: inline-block;
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      padding: 3px;
+      margin-left: 5px;
+      margin-bottom: 1px;
+      transform: rotate(45deg);
+    }
+
+    div.content {
+        display: none;
+        background-color: lighten($grey, 22%);
+        flex-direction: column;
+        border-radius: 4px;
+
+        a {
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            background-color: lighten($grey, 18%);
+        }
+
+        a:first-child {
+            padding-top: 0.6rem;
+        }
+
+        &:last-child {
+            padding-bottom: 0.5rem;
+        }
+    }
+
+    button:focus + div.content {
+        display: flex;
+    }
+}
